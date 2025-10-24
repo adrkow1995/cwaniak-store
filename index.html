@@ -95,7 +95,6 @@
 </head>
 
 <body>
-  <img src="/logo.webp" alt="Logo Cwaniak.pl" style="width:200px;">
   <header>
     <div class="container nav">
       <a href="#hero" class="brand" aria-label="Strona główna Cwaniak.pl">
@@ -124,12 +123,15 @@
         </div>
       </div>
 
-      <div class="art" aria-hidden="false">
+      <div class="art">
         <div class="glow t1"></div>
         <div class="glow t2"></div>
         <div class="hero-logo">
-          <!-- poprawna ścieżka logo -->
-          <img src="/logo.webp" alt="Logo Cwaniak.pl" class="logo-hero">
+          <img 
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAgAElEQVR4nOzdeZwU9f7/8dfugQAIIMHEIUzWJhshLgCiAyXKBSArECNYCFYXNia7YvWBVFYlfq6eG6vPbcnR+Oss7d9fWv/97l7rt3f+ZyI3Pn7dnfWn7r33fve97znfOec8zznPOed8LZddMlk+e5K1u38AAAAAElFTkSuQmCC"
+            alt="Logo Cwaniak.pl"
+            class="logo-hero"
+          />
         </div>
       </div>
     </section>
@@ -189,35 +191,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const newsForm = document.getElementById('newsForm');
-    const newsHint = document.getElementById('newsHint');
-    newsForm?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = new FormData(newsForm).get('email');
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
-        newsHint.textContent = 'E-mail wygląda podejrzanie. Spróbuj jeszcze raz.'; return;
-      }
-      console.log('Newsletter (demo):', email);
-      newsHint.textContent = 'Zapis przyjęty (demo). Podłączymy MailerLite / inny provider.';
-      newsForm.reset();
-    });
-
-    const contactForm = document.getElementById('contactForm');
-    const formHint = document.getElementById('formHint');
-    contactForm?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(contactForm).entries());
-      if (!data.name || !data.email || !data.message){
-        formHint.textContent = 'Uzupełnij wszystkie pola.'; return;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email)){
-        formHint.textContent = 'Podaj poprawny adres e-mail.'; return;
-      }
-      console.log('Kontakt (demo):', data);
-      formHint.textContent = 'Wiadomość wysłana (demo). Podłączymy backend do realnych wysyłek.';
-      contactForm.reset();
-    });
   </script>
 </body>
 </html>
