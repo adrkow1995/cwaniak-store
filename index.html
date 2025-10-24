@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#0ea5e9" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       --bg:#0b1220;
@@ -88,11 +88,10 @@
       box-shadow: 0 0 60px rgba(34, 211, 238, 0.6);
     }
 
-    /* Reszta stylów... (sekcje, produkty itd. pozostają bez zmian) */
+    /* Ogólne sekcje */
     .section{padding:3rem 0}
     .section h2{font-family:Poppins, Inter; margin:0 0 .6rem; font-size:1.8rem}
     .muted{color:var(--muted)}
-
     .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:1.2rem}
     .card{grid-column:span 12; background:var(--panel); border:1px solid var(--border); border-radius:1.1rem; padding:1.2rem}
     @media(min-width:860px){.card{grid-column:span 4}}
@@ -108,6 +107,7 @@
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
     <div class="container nav">
       <a href="#hero" class="brand">
@@ -127,6 +127,7 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <main id="hero">
     <section class="container hero">
       <div>
@@ -138,24 +139,68 @@
         </div>
       </div>
 
-      <!-- LOGO -->
       <div class="art">
         <div class="glow t1"></div>
         <div class="glow t2"></div>
         <div class="hero-logo">
-          <img src="images/logo.png" alt="Logo Cwaniak.pl" class="logo-hero" />
+          <img src="/logo.png" alt="Logo Cwaniak.pl" class="logo-hero" />
         </div>
       </div>
     </section>
 
-    <!-- ... reszta sekcji zostaje bez zmian ... -->
+    <!-- SKLEP -->
+    <section id="sklep" class="container section">
+      <h2>Sklep</h2>
+      <p class="muted">Demo kart produktów — podmienisz okładki, tytuły i ceny, a potem dorobimy koszyk i płatności.</p>
+      <div class="grid" style="margin-top:1rem">
+        <article class="card"><h3>Prompty, które robią robotę</h3><p class="muted">Gotowe szablony i techniki, żeby AI pisało jak geniusz po espresso.</p></article>
+        <article class="card"><h3>Strona w weekend (na serio)</h3><p class="muted">Checklista + szablony. Od zera do „pokaż klientowi” bez bólu.</p></article>
+        <article class="card"><h3>Pierwsze 100 sprzedaży</h3><p class="muted">Plan „zrób to i to”, który działa nawet bez armii followersów.</p></article>
+      </div>
+    </section>
+
+    <!-- O NAS -->
+    <section id="o-nas" class="container section">
+      <h2>O Cwaniaku</h2>
+      <div class="grid" style="margin-top:1rem">
+        <article class="card"><h3>Kim my tu jesteśmy?</h3><p class="muted">Cwaniak.pl to miejsce, gdzie wiedza nie udaje mądrzejszej, niż jest — bo jest wystarczająco dobra. Uczymy się szybko, testujemy, skracamy drogę do efektów.</p></article>
+        <article class="card"><h3>Jak uczymy?</h3><p class="muted">Krótkie rozdziały, konkretne checklisty, przykłady do skopiowania. Zero lania wody, sam konkret.</p></article>
+        <article class="card"><h3>Co dalej?</h3><p class="muted">Rozbudujemy sklep, dodamy płatności i automatyczne wysyłki. Ty skup się na treści, my ogarniemy resztę.</p></article>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section id="newsletter" class="container section">
+      <h2>Dołącz do listy — bądź pierwszy, bądź cwany</h2>
+      <p class="muted">Rabat na start, nowości i darmowe fragmenty. Bez spamu.</p>
+      <form id="newsForm" class="card" style="margin-top:1rem; padding:1.2rem">
+        <input name="email" type="email" placeholder="twoj@email.pl" required />
+        <button class="btn" type="submit">Zapisz mnie</button>
+        <p id="newsHint" class="muted"></p>
+      </form>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="container section">
+      <h2>Kontakt</h2>
+      <p class="muted">Masz pytanie lub chcesz współpracować? Napisz śmiało.</p>
+      <form id="contactForm" class="card">
+        <input name="name" placeholder="Imię" required />
+        <input name="email" type="email" placeholder="E-mail" required />
+        <textarea name="message" rows="4" placeholder="Twoja wiadomość..." required></textarea>
+        <button class="btn" type="submit">Wyślij</button>
+        <p id="formHint" class="muted"></p>
+      </form>
+    </section>
   </main>
 
   <footer>
     <div class="container foot">
       <small>© <span id="year"></span> Cwaniak.pl — Wiedza, która robi robotę.</small>
-      <div>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center">
         <a href="#hero">Do góry ↑</a>
+        <a href="regulamin.html">Regulamin</a>
+        <a href="polityka-prywatnosci.html">Polityka prywatności</a>
       </div>
     </div>
   </footer>
