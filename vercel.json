@@ -4,9 +4,25 @@
     {
       "src": "index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "regulamin.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "polityka-prywatnosci.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/regulamin",
+      "dest": "/regulamin.html"
+    },
+    {
+      "src": "/polityka-prywatnosci",
+      "dest": "/polityka-prywatnosci.html"
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
